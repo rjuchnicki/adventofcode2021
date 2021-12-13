@@ -22,11 +22,19 @@ fun part2(depths: List<Int>) : Int {
     return count
 }
 
+fun part1Func(depths: List<Int>) : Int {
+    return depths.windowed(2).count { it.first() < it.last() }
+}
+
+fun part2Func(depths: List<Int>) : Int {
+    return depths.windowed(4).count { it.first() < it.last() }
+}
+
 fun main() {
     val depths: List<Int> = 
         File("..\\..\\data\\day01.txt").readLines().map { it.toInt() }
-    val part1: Int = part1(depths) 
-    println("Part 1: $part1")
-    val part2: Int = part2(depths)
-    println("Part 2: $part2")
+    println("Part 1: ${ part1(depths) }")
+    println("Part 2: ${ part2(depths) }")
+    println("Part 1 functional implementation: ${ part1Func(depths) }")
+    println("Part 2 functional implementation: ${ part2Func(depths) }")
 }
