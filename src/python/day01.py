@@ -1,5 +1,3 @@
-
-
 def part1(depths):
     increases = 0
     for i in range(1, len(depths)):
