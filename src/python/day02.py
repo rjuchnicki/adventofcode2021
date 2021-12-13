@@ -27,7 +27,7 @@ def part2(commands):
     return (horizontal, depth)
 
 def main():
-    with open('../data/day02.txt') as f:
+    with open('../../data/day02.txt') as f:
         commands = [command.strip().split(' ') for command in f.readlines()]
         commands = [(command[0], int(command[1])) for command in commands]
 

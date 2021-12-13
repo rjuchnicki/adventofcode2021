@@ -13,9 +13,10 @@ fun part1(depths: List<Int>) : Int {
 fun part2(depths: List<Int>) : Int {
     var count: Int = 0
     for (i in 3 until depths.size) {
-        val sharedSum: Int = depths.elementAt(i-1) + depths.elementAt(i-2)
-        if (depths.elementAt(i-3) + sharedSum <
-            depths.elementAt(i) + sharedSum) {
+        // Compare the first and last elements of each group of 4 adjacent
+        // elements since the two sums for a sliding window of 3 will share the
+        // middle 2 elements.
+        if (depths.elementAt(i-3) < depths.elementAt(i)) {
             count += 1
         }
     }
@@ -32,7 +33,7 @@ fun part2Func(depths: List<Int>) : Int {
 
 fun main() {
     val depths: List<Int> = 
-        File("..\\..\\data\\day01.txt").readLines().map { it.toInt() }
+        File("../../data/day01.txt").readLines().map { it.toInt() }
     println("Part 1: ${ part1(depths) }")
     println("Part 2: ${ part2(depths) }")
     println("Part 1 functional implementation: ${ part1Func(depths) }")
