@@ -27,29 +27,25 @@ fun part1(lines: List<String>) : Int {
 
 fun part2(lines: List<String>) : Int {
     val lineLength = lines.first().length
-    var counts = onesPerPosition(lines)
 
-    // TODO: clean up by initializing oxygenValues and carbonValues to counts
-    // so that you can put everything except i initialization inside the loop.
-    var oxygenBits = counts.map { if (it >= lines.size / 2) '1' else '0' }
-    var oxygenValues = lines.filter { it.get(0) == oxygenBits[0] }
-    var i = 1
+    var oxygenValues = lines;
+    var oxygenCounts: IntArray; var oxygenBits: List<Char>
+    var i = 0
     while (oxygenValues.size > 1 && i < lineLength) {
-        counts = onesPerPosition(oxygenValues)
-        oxygenBits = counts
+        oxygenCounts = onesPerPosition(oxygenValues)
+        oxygenBits = oxygenCounts
             .map { if (it >= oxygenValues.size / 2) '1' else '0' }
         oxygenValues = oxygenValues.filter { it.get(i) == oxygenBits[i] }
         i++
     }
 
-    counts = onesPerPosition(lines)
-    var carbonBits = counts.map { if (it < lines.size / 2) '1' else '0' }
-    var carbonValues = lines.filter { it.get(0) == carbonBits[0] }
-    i = 1
+    var carbonValues = lines;
+    var carbonCounts: IntArray; var carbonBits: List<Char>
+    i = 0
     while (carbonValues.size > 1 && i < lineLength) {
-        counts = onesPerPosition(carbonValues)
-        carbonBits = counts
-            .map { if (it >= carbonValues.size / 2) '1' else '0' }
+        carbonCounts = onesPerPosition(carbonValues)
+        carbonBits = carbonCounts
+            .map { if (it < carbonValues.size / 2) '1' else '0' }
         carbonValues = carbonValues.filter { it.get(i) == carbonBits[i] }
         i++
     }
