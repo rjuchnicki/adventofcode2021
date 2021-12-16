@@ -33,7 +33,7 @@ fun part2Func(depths: List<Int>) : Int {
 
 fun main() {
     val depths: List<Int> = 
-        File("../../data/day01.txt").readLines().map { it.toInt() }
+        File("data/day01.txt").readLines().map { it.toInt() }
     println("Part 1: ${ part1(depths) }")
     println("Part 2: ${ part2(depths) }")
     println("Part 1 functional implementation: ${ part1Func(depths) }")

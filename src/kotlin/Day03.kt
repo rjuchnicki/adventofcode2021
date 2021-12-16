@@ -56,7 +56,7 @@ fun part2(lines: List<String>) : Int {
 }
 
 fun main() {
-    val lines = File("../../data/day03.txt").readLines()
+    val lines = File("data/day03.txt").readLines()
     println("Part 1: ${ part1(lines) }")
     println("Part 2: ${ part2(lines) }")
 }

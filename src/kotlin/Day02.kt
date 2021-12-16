@@ -30,7 +30,7 @@ fun part2(commands: List<List<String>>) : Int {
 }
 
 fun main() {
-    val commands = File("../../data/day02.txt").readLines().map {
+    val commands = File("data/day02.txt").readLines().map {
         it.split(' ')
     }
     println("Part 1: ${ part1(commands) }")
