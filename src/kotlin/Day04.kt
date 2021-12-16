@@ -41,7 +41,7 @@ fun part2(numbers: List<Long>, boards: List<BingoBoard>) : Long {
     var numSolved: Int = 0
     for (number: Long in numbers) {
         var index: Int = -1
-        for (i in 0 until boards.size) {
+        for (i in boards.indices) {
             for (row: MutableList<Long> in boards[i].rows) {
                 val col = row.indexOf(number)
                 if (col != -1) {
