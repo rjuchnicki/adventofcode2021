@@ -5,7 +5,7 @@ fun onesPerPosition(lines: List<String>) : IntArray {
     val counts = IntArray(lineLength) { 0 }
     for (line in lines) {
         for (i in 0 until lineLength) {
-            if (line.get(i) == '1') counts[i]++
+            if (line[i] == '1') counts[i]++
         }
     }
     return counts
@@ -28,7 +28,7 @@ fun part1(lines: List<String>) : Int {
 fun part2(lines: List<String>) : Int {
     val lineLength = lines.first().length
 
-    var oxygenValues = lines;
+    var oxygenValues = lines
     var oxygenCounts: IntArray; var oxygenBits: List<Char>
     var i = 0
     while (oxygenValues.size > 1 && i < lineLength) {
