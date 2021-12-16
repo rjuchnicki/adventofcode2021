@@ -36,6 +36,32 @@ fun part1(numbers: List<Long>, boards: List<BingoBoard>) : Long {
     return -1
 }
 
+fun part2(numbers: List<Long>, boards: List<BingoBoard>) : Long {
+    val solved: Array<Boolean> = Array(boards.size) { false }
+    var numSolved: Int = 0
+    for (number: Long in numbers) {
+        var index: Int = -1
+        for (i in 0 until boards.size) {
+            for (row: MutableList<Long> in boards[i].rows) {
+                val col = row.indexOf(number)
+                if (col != -1) {
+                    row[col] = 0L
+                }
+            }
+            if (hasBingo(boards[i]) && !solved[i]) {
+                solved[i] = true
+                numSolved += 1
+                index = i
+            }
+        }
+
+        if (numSolved == boards.size) {
+            return number * boards[index].rows.sumOf { it.sum() }
+        }
+    }
+    return -1
+}
+
 fun main() {
     val lines = readInput("day04")
     val numbers = lines.first().split(',').map { it.toLong() }
@@ -44,4 +70,5 @@ fun main() {
     }
     val boards = boardLists.map { BingoBoard(it) }
     println("Part 1: ${ part1(numbers, boards) }")
+    println("Part 2: ${ part2(numbers, boards) }")
 }
