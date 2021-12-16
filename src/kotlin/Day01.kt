@@ -1,5 +1,3 @@
-import java.io.File
-
 fun part1(depths: List<Int>) : Int {
     var count: Int = 0
     for (i in 1 until depths.size) {
@@ -32,8 +30,7 @@ fun part2Func(depths: List<Int>) : Int {
 }
 
 fun main() {
-    val depths: List<Int> = 
-        File("data/day01.txt").readLines().map { it.toInt() }
+    val depths: List<Int> = readInput("day01").map { it.toInt() }
     println("Part 1: ${ part1(depths) }")
     println("Part 2: ${ part2(depths) }")
     println("Part 1 functional implementation: ${ part1Func(depths) }")

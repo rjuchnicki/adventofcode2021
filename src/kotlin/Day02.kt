@@ -1,5 +1,3 @@
-import java.io.File
-
 fun part1(commands: List<List<String>>) : Int {
     var horizontal = 0; var depth = 0
     for (command: List<String> in commands) {
@@ -30,9 +28,7 @@ fun part2(commands: List<List<String>>) : Int {
 }
 
 fun main() {
-    val commands = File("data/day02.txt").readLines().map {
-        it.split(' ')
-    }
+    val commands = readInput("day02").map { it.split(' ') }
     println("Part 1: ${ part1(commands) }")
     println("Part 2: ${ part2(commands) }")
 }

@@ -1,5 +1,3 @@
-import java.io.File
-
 fun onesPerPosition(lines: List<String>) : IntArray {
     val lineLength = lines.first().length
     val counts = IntArray(lineLength) { 0 }
@@ -56,7 +54,7 @@ fun part2(lines: List<String>) : Int {
 }
 
 fun main() {
-    val lines = File("data/day03.txt").readLines()
+    val lines = readInput("day03")
     println("Part 1: ${ part1(lines) }")
     println("Part 2: ${ part2(lines) }")
 }
