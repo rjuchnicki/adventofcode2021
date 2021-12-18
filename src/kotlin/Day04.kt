@@ -1,3 +1,7 @@
+package day04
+
+import readInput
+
 data class BingoBoard(val rows: List<MutableList<Long>>)
 
 fun hasBingo(board: BingoBoard) : Boolean {

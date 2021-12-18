@@ -1,5 +1,8 @@
+package day05
+
 import java.lang.Integer.min
 import java.lang.Integer.max
+import readInput
 
 fun createGrid(endpointList: List<List<Int>>): Array<Array<Int>> {
     var maxX = -1; var maxY = -1

@@ -1,3 +1,7 @@
+package day02
+
+import readInput
+
 fun part1(commands: List<List<String>>) : Int {
     var horizontal = 0; var depth = 0
     for (command: List<String> in commands) {

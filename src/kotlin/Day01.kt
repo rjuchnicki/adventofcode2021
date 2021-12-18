@@ -1,3 +1,7 @@
+package day01
+
+import readInput
+
 fun part1(depths: List<Int>) : Int {
     var count: Int = 0
     for (i in 1 until depths.size) {

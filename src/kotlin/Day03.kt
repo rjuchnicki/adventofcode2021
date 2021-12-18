@@ -1,3 +1,7 @@
+package day03
+
+import readInput
+
 fun onesPerPosition(lines: List<String>) : IntArray {
     val lineLength = lines.first().length
     val counts = IntArray(lineLength) { 0 }
