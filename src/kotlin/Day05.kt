@@ -1,7 +1,7 @@
 package day05
 
-import java.lang.Integer.min
-import java.lang.Integer.max
+import kotlin.math.min
+import kotlin.math.max
 import readInput
 
 fun createGrid(endpointList: List<List<Int>>): Array<Array<Int>> {
